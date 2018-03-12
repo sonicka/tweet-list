@@ -7,7 +7,7 @@ const controls = (props) => (
         <Navbar collapseOnSelect>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a>Tweteer</a>
+                    <a>Tweeter</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
             </Navbar.Header>
