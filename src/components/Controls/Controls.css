@@ -1,0 +1,26 @@
+.Toolbar {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+.Bottom {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    background-color: lightskyblue;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    bottom: 0;
+    justify-content: center;
+}

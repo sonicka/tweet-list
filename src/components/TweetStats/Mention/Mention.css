@@ -1,0 +1,5 @@
+.Mention {
+    flex-flow: row;
+    display: inline-table;
+    margin: 5px;
+}
