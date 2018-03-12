@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c856bb2-bdf1-4bc9-ba74-c1ecbd3c5732" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/BottomToolbar.css" afterPath="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/BottomToolbar.js" afterPath="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/Controls.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/Controls.js" afterPath="$PROJECT_DIR$/src/components/Toolbars/TopToolbar.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/InputField/InputField.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/InputField/InputField.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/Sort/Sort.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/Controls/Sort/Sort.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/List.css" afterPath="$PROJECT_DIR$/src/components/List/List.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/List.js" afterPath="$PROJECT_DIR$/src/components/List/List.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/Tweet/Tweet.css" afterPath="$PROJECT_DIR$/src/components/List/Tweet/Tweet.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/Tweet/Tweet.js" afterPath="$PROJECT_DIR$/src/components/List/Tweet/Tweet.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.css" afterPath="$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.js" afterPath="$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/TweetStats/TweetStats.js" afterPath="$PROJECT_DIR$/src/components/TweetStats/TweetStats.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.css" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Tweeter/Tweeter.js" afterPath="$PROJECT_DIR$/src/containers/Tweeter/Tweeter.js" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Auxx/Auxx.js" afterPath="$PROJECT_DIR$/src/hoc/Auxx/Auxx.js" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js" afterPath="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js" />
       <change beforePath="$PROJECT_DIR$/src/methods/twitter.js" afterPath="$PROJECT_DIR$/src/methods/twitter.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,14 +15,94 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Tweeter.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tweeter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Tweeter/Tweeter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="42" column="54" lean-forward="false" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+            <state relative-caret-position="398">
+              <caret line="213" column="17" lean-forward="false" selection-start-line="213" selection-start-column="17" selection-end-line="213" selection-end-column="17" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopToolbar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Toolbars/TopToolbar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TweetStats.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/TweetStats/TweetStats.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mention.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BottomToolbar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twitter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/methods/twitter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="54" column="2" lean-forward="false" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auxx.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hoc/Auxx/Auxx.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,16 +198,16 @@
         <option value="$PROJECT_DIR$/src/components/Controls/Controls.js" />
         <option value="$PROJECT_DIR$/src/components/Toolabars/TopToolbar.css" />
         <option value="$PROJECT_DIR$/src/components/Toolbars/TopToolbar.js" />
-        <option value="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/List/Tweet/Tweet.css" />
         <option value="$PROJECT_DIR$/src/components/List/List.js" />
         <option value="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.css" />
         <option value="$PROJECT_DIR$/src/components/List/List.css" />
-        <option value="$PROJECT_DIR$/src/methods/twitter.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/Tweeter/Tweeter.js" />
         <option value="$PROJECT_DIR$/src/components/List/Tweet/Tweet.js" />
+        <option value="$PROJECT_DIR$/src/methods/twitter.js" />
+        <option value="$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js" />
       </list>
     </option>
   </component>
@@ -207,19 +258,6 @@
               <item name="tweet-list" type="b2602c69:ProjectViewProjectNode" />
               <item name="tweet-list" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tweet-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tweet-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tweet-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tweet-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="Tweeter" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -387,12 +425,12 @@
       <workItem from="1520348393031" duration="15028000" />
       <workItem from="1520435945042" duration="33288000" />
       <workItem from="1520592673110" duration="19163000" />
-      <workItem from="1520810436969" duration="11694000" />
+      <workItem from="1520810436969" duration="11958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249099000" />
+    <option name="totallyTimeSpent" value="249363000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,14 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hoc/Auxx/Auxx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -625,16 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -643,31 +663,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetStats/TweetStats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,26 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Toolbars/TopToolbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="91" lean-forward="false" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/List/List.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -761,14 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/twitter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -817,12 +789,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/twitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="54" column="2" lean-forward="false" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hoc/Auxx/Auxx.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Tweeter/Tweeter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="42" column="54" lean-forward="false" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+        <state relative-caret-position="398">
+          <caret line="213" column="17" lean-forward="false" selection-start-line="213" selection-start-column="17" selection-end-line="213" selection-end-column="17" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetStats/TweetStats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetStats/Mention/Mention.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Toolbars/BottomToolbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Toolbars/TopToolbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
