@@ -1,35 +1,28 @@
 .List {
     height: 100%;
     position: fixed;
-    top: 60px;
+    top: 52px;
     left: 5%;
     right: 5%;
     overflow: auto;
     color: black;
-
-    /* Make sure the inner div is not larger than the container
-    * so that we have room to scroll.
-    */
     max-height: 100%;
-
-    /* Pick an arbitrary margin/padding that should be bigger
-     * than the max width of all the scroll bars across
-     * the devices you are targeting.
-     * padding = -margin
-     */
     margin-right: -100px;
     padding-right: 100px;
+}
+
+@media (max-width: 500px) {
+    .List {
+        top: 340px;
+        max-height: 50%;
+    }
 }
 
 .Wrapper {
     overflow:hidden;
 }
 
-.Tweet {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    color: black;
-    padding: 10px;
-    margin: 10px;
-}
+
+/*
+TODO in mobile mode - when menu collapsed - stretch the list area
+*/

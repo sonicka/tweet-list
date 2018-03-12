@@ -2,12 +2,10 @@ import React, {Component} from 'react';
 import List from '../../components/List/List';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../../hoc/Auxx/Auxx';
-import Button from "../../components/UI/Button/Button";
 import TweetStats from "../../components/TweetStats/TweetStats";
-import Controls from "../../components/Controls/Controls";
+import TopToolbar from "../../components/Toolbars/TopToolbar";
 import {fetchTweets} from "../../methods/twitter";
-import classes from "../../components/Controls/Controls.css";
-import BottomToolbar from "../../components/Controls/BottomToolbar";
+import BottomToolbar from "../../components/Toolbars/BottomToolbar";
 
 
 class Tweeter extends Component {
@@ -15,6 +13,7 @@ class Tweeter extends Component {
         tweets: [],
         tweetsToShow: [],
         username: "",
+        tweetsShown: false,
         statsRequested: false,
 
         descendingLikes: true,
@@ -26,14 +25,24 @@ class Tweeter extends Component {
     };
 
     usernameChangeHandler = (event) => {
-        this.setState({username: event.target.value});
+        this.setState({username: event.target.value}, function () {
+            if (this.state.username === "") {
+                this.setState({tweetsToShow: [], tweetsShown: false})
+            }
+        });
     };
 
     submitHandler = (event) => {
         event.preventDefault();
-        console.log("handle submit");
         fetchTweets(this.state.username, (allTweets) => {
-            this.setState({tweets: allTweets, tweetsToShow: allTweets})
+            if (!allTweets) {
+                alert("Chosen user hasn't tweeted.");
+            } else {
+                this.setState({tweets: allTweets, tweetsToShow: allTweets});
+                if (allTweets.length > 0) {
+                    this.setState({tweetsShown: true})
+                }
+            }
         })
     };
 
@@ -163,7 +172,7 @@ class Tweeter extends Component {
 
     sortByDate = () => {
         let sortedList;
-        sortedList = [...this.state.tweetsToShow]; // todo reaguje az na dvojklik
+        sortedList = [...this.state.tweetsToShow]; // todo reaguje az na dvojklik waaat
         if (this.state.descendingDate) {
             this.setState(prevState => ({
                 descendingDate: !prevState.descendingDate, tweetsToShow: sortedList
@@ -183,7 +192,7 @@ class Tweeter extends Component {
                     close={this.closeModal}>
                     <TweetStats tweets={this.state.tweetsToShow} close={this.closeModal}/>
                 </Modal>
-                <Controls
+                <TopToolbar
                     handleChange={this.usernameChangeHandler}
                     handleSubmit={this.submitHandler}
                     handleSortLikes={this.sortByLikes}
@@ -191,16 +200,12 @@ class Tweeter extends Component {
                     handleQueryChange={this.filterQueryChangeHandler}
                     handleFilterChange={this.setFilterMode}
                     username={this.state.username}
+                    tweetsShown={this.state.tweetsShown}
                     filteringQuery={this.state.filteringQuery}/>
                 {this.state.tweetsToShow.length > 0 ? <List list={this.state.tweetsToShow}/> : null}
-                <div className={classes.Bottom}>
-                    <Button
-                        className={classes.Button}
-                        clicked={this.showStatsHandler}
-                        close={this.closeModal}>Show Statistics</Button>
-                </div>
                 <BottomToolbar clicked={this.showStatsHandler}
-                               close={this.closeModal}/>
+                               close={this.closeModal}
+                               tweetsShown={this.state.tweetsShown}/>
             </Aux>
         )
     }

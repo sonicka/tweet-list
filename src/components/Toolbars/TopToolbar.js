@@ -4,7 +4,7 @@ import Aux from '../../hoc/Auxx/Auxx';
 
 const controls = (props) => (
     <Aux>
-        <Navbar collapseOnSelect>
+        <Navbar>
             <Navbar.Header>
                 <Navbar.Brand>
                     <a>Tweeter</a>
@@ -17,28 +17,29 @@ const controls = (props) => (
                         <FormGroup>
                             <FormControl type="text" onChange={props.handleChange} placeholder="Username"/>
                         </FormGroup>{' '}
-                        <Button onClick={props.handleSubmit}>Load Tweets</Button>
+                        <Button onClick={props.handleSubmit} disabled={props.username === ""}>Load Tweets</Button>
                     </Navbar.Form>
                 </Nav>
                 <Nav pullRight>
-                    <NavDropdown eventKey={3} title="Filter by" id="basic-nav-dropdown">
-                        <MenuItem eventKey={3.1} onSelect={() => props.handleFilterChange("date")}>Date</MenuItem>
-                        <MenuItem eventKey={3.2} onSelect={() => props.handleFilterChange("length")}>Length</MenuItem>
-                        <MenuItem eventKey={3.3} onSelect={() => props.handleFilterChange("num_of_likes")}>Number of Likes</MenuItem>
-                        <MenuItem eventKey={3.4} onSelect={() => props.handleFilterChange("mentions")}>Mentions</MenuItem>
-                        <MenuItem eventKey={3.5} onSelect={() => props.handleFilterChange("hashtags")}>Hashtags</MenuItem>
+                    <NavDropdown title="Filter by" id="basic-nav-dropdown" disabled={!props.tweetsShown}>
+                        <MenuItem onSelect={() => props.handleFilterChange("date")}>Date</MenuItem>
+                        <MenuItem onSelect={() => props.handleFilterChange("length")}>Length</MenuItem>
+                        <MenuItem onSelect={() => props.handleFilterChange("num_of_likes")}>Number of Likes</MenuItem>
+                        <MenuItem onSelect={() => props.handleFilterChange("mentions")}>Mentions</MenuItem>
+                        <MenuItem onSelect={() => props.handleFilterChange("hashtags")}>Hashtags</MenuItem>
                     </NavDropdown>
                     <Navbar.Form pullLeft>
                         <FormGroup>
                             <FormControl type="text"
                                          onChange={props.handleQueryChange}
+                                         disabled={!props.tweetsShown}
                                          placeholder="Find"
                                          value={props.filteringQuery}/>
                         </FormGroup>
                     </Navbar.Form>
-                    <NavDropdown eventKey={3} title="Sort" id="basic-nav-dropdown">
-                        <MenuItem eventKey={3.1} onSelect={props.handleSortLikes}>Number of Likes</MenuItem>
-                        <MenuItem eventKey={3.2} onSelect={props.handleSortDate}>Date</MenuItem>
+                    <NavDropdown title="Sort" id="basic-nav-dropdown" disabled={!props.tweetsShown}>
+                        <MenuItem onSelect={props.handleSortLikes}>Number of Likes</MenuItem>
+                        <MenuItem onSelect={props.handleSortDate}>Date</MenuItem>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>

@@ -20,7 +20,7 @@ const TweetStats = (props) => {
         let sum = countLikes(tweets);
         let numberOfTweets = tweets.length;
         if (numberOfTweets > 0) {
-            return sum / numberOfTweets;
+            return (sum / numberOfTweets).toFixed(2);
         }
         return 0;
     };
@@ -41,7 +41,6 @@ const TweetStats = (props) => {
                 }
                 return list;
             }, {});
-
 
             return Object.entries(result).map((item, index) => {
                 return <Mention name={item[0]} number={item[1]} key={index}/>

@@ -6,8 +6,7 @@ const list = (props) => {
 
     let transformedTweets = Object.keys(props.list)
         .map(tweetKey => {
-            return <Tweet className={classes.Tweet}
-                          tweet={props.list[tweetKey]}
+            return <Tweet tweet={props.list[tweetKey]}
                           key={tweetKey}/>
         }).reduce((array, item) => {
             return array.concat(item);
