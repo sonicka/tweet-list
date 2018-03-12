@@ -17,7 +17,7 @@ class Tweeter extends Component {
         statsRequested: false,
 
         descendingLikes: true,
-        descendingDate: null,
+        descendingDate: true,
         isSorted: false,
 
         filteredBy: "",
@@ -172,15 +172,11 @@ class Tweeter extends Component {
 
     sortByDate = () => {
         let sortedList;
-        sortedList = [...this.state.tweetsToShow]; // todo reaguje az na dvojklik waaat
-        if (this.state.descendingDate) {
-            this.setState(prevState => ({
-                descendingDate: !prevState.descendingDate, tweetsToShow: sortedList
-            }));
+        sortedList = [...this.state.tweetsToShow];
+        if (!this.state.isSorted) {
+            this.setState({isSorted: true, tweetsToShow: sortedList.reverse()})
         } else {
-            this.setState(prevState => ({
-                descendingDate: !prevState.descendingDate, tweetsToShow: sortedList.reverse()
-            }));
+            this.setState({tweetsToShow: sortedList.reverse()});
         }
     };
 

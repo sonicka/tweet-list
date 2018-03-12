@@ -3,7 +3,6 @@ import Tweet from './Tweet/Tweet';
 import classes from './List.css';
 
 const list = (props) => {
-
     let transformedTweets = Object.keys(props.list)
         .map(tweetKey => {
             return <Tweet tweet={props.list[tweetKey]}
@@ -16,10 +15,8 @@ const list = (props) => {
         return <p>No tweets to show!</p>
     } else {
         return (
-            <div className={classes.Wrapper}>
-                <div className={classes.List}>
-                    {transformedTweets}
-                </div>
+            <div className={classes.List}>
+                {transformedTweets}
             </div>
         )
     }

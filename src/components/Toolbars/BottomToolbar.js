@@ -5,8 +5,8 @@ import classes from './BottomToolbar.css';
 
 const bottomToolbar = (props) => (
     <Aux>
-        <Navbar className={classes.navbar} fixedBottom>
-            <Button className={classes.button}
+        <Navbar className={classes.Navbar} fixedBottom>
+            <Button className={classes.Button}
                     bsStyle="primary"
                     onClick={props.clicked}
                     disabled={!props.tweetsShown}>Show Statistics</Button>

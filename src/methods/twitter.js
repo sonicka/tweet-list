@@ -30,7 +30,7 @@ export const fetchTweets = (username, handleResult) => {
             for (let i = 0; i < tweets.length; i++) {
                 let tw = tweets[i];
                 date = tw.created_at.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC");
-                let newTweet = new Tweet(i, tw.text, tw.user.screen_name, date, tw.favorite_count,
+                let newTweet = new Tweet(tw.id_str, tw.text, tw.user.screen_name, date, tw.favorite_count,
                     tw.entities.user_mentions, tw.entities.hashtags);
                 allTweets.push(newTweet);
             }
