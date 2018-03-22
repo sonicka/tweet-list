@@ -1,19 +1,7 @@
 .List {
-    height: 100%;
-    position: absolute;
+    height: 90%;
+    width: 100%;
     top: 52px;
-    left: 5%;
-    right: 5%;
+    padding: 52px 8vw;
     overflow: auto;
-    color: black;
 }
-
-.Navbar {
-    margin: 0;
-}
-
-
-/*
-TODO in mobile mode - push down content when menu is extended
-TODO top toolbar breakpoint 991px
-*/

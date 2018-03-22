@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import List from '../../components/List/List';
-import Modal from '../../components/UI/Modal/Modal';
+import Modal from '../../components/Modal/Modal';
 import Aux from '../../hoc/Auxx/Auxx';
 import TweetStats from "../../components/TweetStats/TweetStats";
 import TopToolbar from "../../components/Toolbars/TopToolbar";
-import {fetchTweets} from "../../methods/twitter";
+import {fetchTweets} from "../../methods/FetchTweets";
 import BottomToolbar from "../../components/Toolbars/BottomToolbar";
 
 
@@ -16,18 +16,21 @@ class Tweeter extends Component {
         tweetsShown: false,
         statsRequested: false,
 
-        descendingLikes: true,
-        descendingDate: true,
-        isSorted: false,
+        isSortedByDate: false,
+        isSortedByLikes: false,
+        sortedBy: "Sort",
 
+        isFiltered: false,
         filteredBy: "",
         filteringQuery: "",
+        filteredTweets: []
     };
 
     usernameChangeHandler = (event) => {
         this.setState({username: event.target.value}, function () {
             if (this.state.username === "") {
-                this.setState({tweetsToShow: [], tweetsShown: false})
+                this.setState({tweetsToShow: [], tweetsShown: false, isFiltered: false, filteringQuery: "",
+                    filteredBy: "", sortedBy: "Sort", isSortedByDate: false, isSortedByLikes: false})
             }
         });
     };
@@ -36,9 +39,10 @@ class Tweeter extends Component {
         event.preventDefault();
         fetchTweets(this.state.username, (allTweets) => {
             if (!allTweets) {
-                alert("Chosen user hasn't tweeted.");
+                alert("Chosen user hasn't tweeted yet.");
             } else {
-                this.setState({tweets: allTweets, tweetsToShow: allTweets});
+                this.setState({tweets: allTweets, tweetsToShow: allTweets, isFiltered: false, filteringQuery: "",
+                    filteredBy: "", sortedBy: "Sort", isSortedByDate: false, isSortedByLikes: false});
                 if (allTweets.length > 0) {
                     this.setState({tweetsShown: true})
                 }
@@ -47,23 +51,33 @@ class Tweeter extends Component {
     };
 
     showStatsHandler = () => {
-        console.log("modal closed");
         this.setState({statsRequested: true})
     };
 
     closeModal = () => {
-        console.log("modal closed");
         this.setState({statsRequested: false})
     };
 
     filterQueryChangeHandler = (event) => {
-        this.setState({filteringQuery: event.target.value});
+        this.setState({filteringQuery: event.target.value, sortedBy: "Sort"});
         this.filter(event.target.value);
     };
 
+    setTitle = () => {
+        let title = this.state.filteredBy.charAt(0).toUpperCase() + (this.state.filteredBy).slice(1);
+        if (this.state.filteredBy === "num_of_likes") {
+            title = "Number of likes"
+        }
+        if (this.state.filteredBy === "") {
+            return "Filter by"
+        } else {
+            return title
+        }
+    };
+
     setFilterMode = (event) => {
-        console.log("filter mode " + event);
-        this.setState({filteredBy: event, tweetsToShow: this.state.tweets, filteringQuery: ""})
+        this.setState({tweetsToShow: this.state.tweets, filteringQuery: "", isFiltered: true, filteredBy: event,
+            sortedBy: "Sort"})
     };
 
     filter = (query) => {
@@ -73,14 +87,21 @@ class Tweeter extends Component {
         query = query.toLowerCase();
 
         switch (filterBy) {
-            case "date":     // date format: Mth DD YYYY
+            case "text":
+                original.filter(function (currentValue) {
+                    if (currentValue.text.toLowerCase().indexOf(query.toString()) !== -1) {
+                        filtered.push(currentValue);
+                    }
+                    return filtered;
+                });
+                break;
+            case "date":
                 let modQuery = query.split(" ", 3);
                 let shouldBeAdded = false;
                 original.filter(function (currentValue) {
                     for (let i = 0; i < modQuery.length; i++) {
                         if (currentValue.date.toLowerCase().substr(0, 11).indexOf(modQuery[i]) !== -1) {
                             shouldBeAdded = true;
-                            console.log(currentValue.date.toLowerCase().substr(0, 11));
                         } else {
                             shouldBeAdded = false;
                             break;
@@ -122,7 +143,6 @@ class Tweeter extends Component {
             case "hashtags":
                 original.filter(function (currentValue) {
                     currentValue.hashtags.map(function (hashtag) {
-                        console.log(currentValue);
                         if (hashtag.text.toLowerCase() === query) {
                             filtered.push(currentValue);
                         }
@@ -132,51 +152,65 @@ class Tweeter extends Component {
                 });
                 break;
             default:
-                original.filter(function (currentValue) {
-                    if (currentValue.text.indexOf(query.toString()) !== -1) {
-                        filtered.push(currentValue);
-                    }
-                    return filtered;
-                });
                 break;
         }
-        this.setState({tweetsToShow: filtered});
+        this.setState({tweetsToShow: filtered, filteredTweets: filtered, isFiltered: true,
+            isSortedByDate: false, isSortedByLikes: false});
         if (query.length === 0) {
-            this.setState({tweetsToShow: original});
+            this.setState({tweetsToShow: original, filteredTweets: original, isFiltered: false,
+                isSortedByDate: false, isSortedByLikes: false});
         }
     };
 
     sortByLikes = () => {
-        let sortedList = [...this.state.tweetsToShow];
-        sortedList.sort((a, b) => {
-            let sortVal = 0;
-            if (a["num_of_likes"] > b["num_of_likes"]) {
-                sortVal = -1;
+        let sortedList;
+        if (!this.state.isSortedByLikes) {
+            if (this.state.isFiltered) {
+                sortedList = [...this.state.filteredTweets];
+            } else {
+                sortedList = [...this.state.tweets];
             }
-            if (a["num_of_likes"] < b["num_of_likes"]) {
-                sortVal = 1;
-            }
-            return sortVal;
-        });
-
-        if (this.state.descendingLikes) {
-            this.setState(prevState => ({
-                descendingLikes: !prevState.descendingLikes, tweetsToShow: sortedList
-            }));
+            sortedList.sort((a, b) => {
+                let sortVal = 0;
+                if (a["num_of_likes"] > b["num_of_likes"]) {
+                    sortVal = -1;
+                }
+                if (a["num_of_likes"] < b["num_of_likes"]) {
+                    sortVal = 1;
+                }
+                return sortVal;
+            });
+            this.setState({tweetsToShow: sortedList, sortedBy: "Most liked first", isSortedByDate: false, isSortedByLikes: true})
         } else {
-            this.setState(prevState => ({
-                descendingLikes: !prevState.descendingLikes, tweetsToShow: sortedList.reverse()
-            }));
+            sortedList = [...this.state.tweetsToShow];
+            let title;
+            if (this.state.sortedBy === "Most liked first") {
+                title = "Least liked first";
+            } else {
+                title = "Most liked first";
+            }
+            this.setState({tweetsToShow: sortedList.reverse(), sortedBy: title, isSortedByDate: false, isSortedByLikes: true})
         }
     };
 
     sortByDate = () => {
         let sortedList;
-        sortedList = [...this.state.tweetsToShow];
-        if (!this.state.isSorted) {
-            this.setState({isSorted: true, tweetsToShow: sortedList.reverse()})
+        if (!this.state.isSortedByDate) {
+            if (this.state.isFiltered) {
+                sortedList = [...this.state.filteredTweets];
+            } else {
+                sortedList = [...this.state.tweets];
+            }
+            this.setState({tweetsToShow: sortedList.reverse(), sortedBy: "Oldest first", isSortedByDate: true, isSortedByLikes: false})
         } else {
-            this.setState({tweetsToShow: sortedList.reverse()});
+            sortedList = [...this.state.tweetsToShow];
+            let title;
+            if (this.state.sortedBy === "Oldest first") {
+                title = "Latest first";
+            } else {
+                title = "Oldest first";
+            }
+            this.setState({tweetsToShow: sortedList.reverse(), sortedBy: title, isSortedByDate: true, isSortedByLikes: false})
         }
     };
 
@@ -195,6 +229,9 @@ class Tweeter extends Component {
                     handleSortDate={this.sortByDate}
                     handleQueryChange={this.filterQueryChangeHandler}
                     handleFilterChange={this.setFilterMode}
+                    setTitle={this.setTitle}
+                    isFiltered={this.state.isFiltered}
+                    sortedBy={this.state.sortedBy}
                     username={this.state.username}
                     tweetsShown={this.state.tweetsShown}
                     filteringQuery={this.state.filteringQuery}/>

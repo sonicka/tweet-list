@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar, Nav, MenuItem, NavDropdown, Button, FormControl, FormGroup} from "react-bootstrap";
-import classes from "../List/List.css";
+import classes from "./Toolbars.css";
 
 const topToolbar = (props) => (
     <Navbar className={classes.Navbar} fixedTop>
@@ -20,7 +20,10 @@ const topToolbar = (props) => (
                 </Navbar.Form>
             </Nav>
             <Nav pullRight>
-                <NavDropdown title="Filter by" id="basic-nav-dropdown" disabled={!props.tweetsShown}>
+                <NavDropdown title={props.tweetsShown && props.isFiltered ? props.setTitle() : "Filter by"}
+                             id="basic-nav-dropdown"
+                             disabled={!props.tweetsShown && !props.isFiltered}>
+                    <MenuItem onSelect={() => props.handleFilterChange("text")}>Text</MenuItem>
                     <MenuItem onSelect={() => props.handleFilterChange("date")}>Date</MenuItem>
                     <MenuItem onSelect={() => props.handleFilterChange("length")}>Length</MenuItem>
                     <MenuItem onSelect={() => props.handleFilterChange("num_of_likes")}>Number of Likes</MenuItem>
@@ -31,12 +34,14 @@ const topToolbar = (props) => (
                     <FormGroup>
                         <FormControl type="text"
                                      onChange={props.handleQueryChange}
-                                     disabled={!props.tweetsShown}
+                                     disabled={!props.isFiltered}
                                      placeholder="Find"
                                      value={props.filteringQuery}/>
                     </FormGroup>
                 </Navbar.Form>
-                <NavDropdown title="Sort" id="basic-nav-dropdown" disabled={!props.tweetsShown}>
+                <NavDropdown title={props.sortedBy}
+                             id="basic-nav-dropdown"
+                             disabled={!props.tweetsShown}>
                     <MenuItem onSelect={props.handleSortLikes}>Number of Likes</MenuItem>
                     <MenuItem onSelect={props.handleSortDate}>Date</MenuItem>
                 </NavDropdown>

@@ -2,7 +2,7 @@ import React from 'react';
 import Aux from '../../hoc/Auxx/Auxx';
 import Mention from "./Mention/Mention";
 
-const TweetStats = (props) => {
+const tweetStats = (props) => {
 
     const countLikes = (tweets) => {
         let tweetsCopy = [];
@@ -30,8 +30,8 @@ const TweetStats = (props) => {
         let screenNames = [];
 
         if (props.tweets.length > 0) {
-            [...props.tweets].map(item => mentions.push(...item.mentions));    // list of all mention objects
-            [...mentions].map(mention => screenNames.push([mention.screen_name]));  // list of just screen names of mentions
+            [...props.tweets].map(item => mentions.push(...item.mentions));
+            [...mentions].map(mention => screenNames.push([mention.screen_name]));
 
             let result = [...screenNames].reduce(function (list, name) {
                 if (typeof list[name] === 'undefined') {
@@ -66,4 +66,4 @@ const TweetStats = (props) => {
     );
 };
 
-export default TweetStats;
+export default tweetStats;
