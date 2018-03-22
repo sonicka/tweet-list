@@ -10,7 +10,7 @@ const tweet = (props) => {
             <a target="_blank" href={tweetUrl}>View Full Tweet</a>
             <br/>
             <br/>
-            <h5>posted by <a target="_blank" href={authorUrl}>{props.tweet.author}</a> on {props.tweet.date}</h5>
+            <h5>posted by <a target="_blank" href={authorUrl}>{props.tweet.author}</a> at {props.tweet.date}</h5>
             <p>{props.tweet.num_of_likes} Likes</p>
         </div>
     )
