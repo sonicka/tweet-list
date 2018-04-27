@@ -3,7 +3,7 @@ let twit = require('twitter'),
         consumer_key: '0fVkdNW2qeRTTCkr0vMppaXA5',
         consumer_secret: 'rJqFv9EmARJaOtvOQSV4GWk3e8WAIsrj2u5PngTQ2XPyT3IPKU',
         access_token_key: '1905434718-MUBETL4glVeCexLv2sHCGarxXLFeCm2kuqQIrVO',
-        access_token_secret: 'eIQeD8PC3DJ1RRZSUO6ftFl1GrRqeqSfksYuTbB51H4Ng'
+        access_token_secret: 'eIQeD8PC3DJ1RRZSUO6ftFl1GrRqeqSfksYuTbB51H4Ng',
     });
 
 export class Tweet {
@@ -19,7 +19,7 @@ export class Tweet {
 }
 
 export const fetchTweets = (username, handleResult) => {
-    twitter.get("statuses/user_timeline", {screen_name: username, count: 50}, function (error, tweets) {
+    twitter.get("statuses/user_timeline", {screen_name: username, count: 50, q: 'node.js'}, function (error, tweets) {
         if (username === "") {
             alert("Enter a username!");
             return [];
