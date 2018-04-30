@@ -1,9 +1,9 @@
 let twit = require('twitter'),
     twitter = new twit({
-        consumer_key: '0fVkdNW2qeRTTCkr0vMppaXA5',
-        consumer_secret: 'rJqFv9EmARJaOtvOQSV4GWk3e8WAIsrj2u5PngTQ2XPyT3IPKU',
-        access_token_key: '1905434718-MUBETL4glVeCexLv2sHCGarxXLFeCm2kuqQIrVO',
-        access_token_secret: 'eIQeD8PC3DJ1RRZSUO6ftFl1GrRqeqSfksYuTbB51H4Ng',
+        consumer_key: 'hidden for security reasons',
+        consumer_secret: 'hidden for security reasons',
+        access_token_key: 'hidden for security reasons',
+        access_token_secret: 'hidden for security reasons',
     });
 
 export class Tweet {
