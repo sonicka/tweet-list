@@ -1,6 +1,6 @@
 ## Tweet List App
 
-A simple React app working with Twitter API, using Twitter Bootstrap for UI.
+A simple React app working with [Twitter API](https://developer.twitter.com/en/docs), using [Twitter Bootstrap](https://getbootstrap.com/docs/3.3/) for UI.
 - gets username from user
 - loads last 50 Tweets for existing username
 - enables sorting shown Tweets by date and number of likes
