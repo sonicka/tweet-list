@@ -32,7 +32,7 @@
     "gh-pages": "2.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "macaddress": "^0.2.9",
     "npm": "^6.9.0",
     "object-assign": "4.1.1",
